@@ -1,0 +1,52 @@
+---
+title: "Assignment1"
+author: "YokoTanaka"
+date: "2021/9/22"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+matrix(1:40, ncol=8, nrow=5)
+matrix(1:40, ncol=8, nrow=5) ->mymatrix
+mymatrix[,7]
+mymatrix[4,]
+mymatrix[3,mymatrix[3,] %% 4 ==0]
+mymatrix[2,4]
+
+x <-50
+print(x)
+mode(x)
+x <- "abc"
+print(x)
+mode(x)
+
+x <-c(14,5,3,22,-8,9,-3,45,12,43,8,6)
+result.mean <- mean(x)
+print(result.mean)
+result.mean <- mean(x,trim = 0.2)
+print(result.mean)
+result.median <- median(x)
+print(result.median)
+
+getmode <- function(v) {
+   uniqv <- unique(v)
+   uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+v <- c(3,4,3,5,3,6,7,2,1,2,6,7,8,6)
+result <- getmode(v)
+print(result) 
+getModes<-function(x) {
+   uniqx<-unique(x)
+   tab <-tabulate(match(x, uniqx))
+   uniqx[tab == max(tab)]}  
+getModes(v)

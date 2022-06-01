@@ -1,0 +1,262 @@
+---
+title: "Untitled"
+author: "YokoTanaka"
+date: "2021/11/23"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+#villagers
+
+getwd()
+library(readr)
+villagers <- read_csv("R/Finalproject/villagers.csv")
+print(villagers)
+nrow(villagers)
+ncol(villagers)
+table(villagers$Gender)
+table(villagers$Personality)
+table(villagers$Hobby)
+table(villagers$Birthday)
+table(villagers$`Favorite Song`)
+table(villagers$`Style 1`)
+table(villagers$`Style 2`)
+table(villagers$`Color 1`)
+table(villagers$`Color 2`)
+table(villagers$Wallpaper)
+table(villagers$Flooring)
+
+#gender
+x <- c(187, 204) 
+labels <- c("Female", "Male")
+piepercent<- round(100*x/sum(x), 1)
+png("villagers_Gender.png") 
+pie(x, labels=piepercent, main = "Gender pie chart", col = rainbow(length(x))) 
+legend("topright", c("Female","Male"), cex = 0.8,
+   fill = rainbow(length(x)))
+dev.off()
+
+#personality
+x <- c(24, 55, 55, 60, 59, 49, 34, 55) 
+labels <- c("Big Sister", "Cranky" , "Jock", "Lazy", "Normal", "Peppy", "Smug", "Snooty")
+piepercent<- round(100*x/sum(x), 1)
+png("villagers_Personality.png") 
+pie(x, labels=piepercent, main = "Personality pie chart", col = rainbow(length(x))) 
+legend("topright", c("Big Sister", "Cranky" , "Jock", "Lazy", "Normal", "Peppy", "Smug", "Snooty"), cex = 0.8,
+   fill = rainbow(length(x)))
+dev.off()
+
+#Style
+x<- c(50, 68,63,54,38, 118)
+labels<- c("Active","Cool","Cute","Elegant", "Gorgeous", "Simple")
+piepercent<- round(100*x/sum(x), 1)
+png("villagers_Style.png") 
+pie(x, labels=piepercent, main = "Style pie chart", col = rainbow(length(x))) 
+legend("topright", c("Active","Cool","Cute","Elegant", "Gorgeous", "Simple"), cex = 0.8,
+   fill = rainbow(length(x)))
+dev.off()
+
+#spieces
+table(villagers$Species)
+H <- c(7,7, 15,13,6,23,9, 4,16,10,16,17,9,11, 18,8,9,8,7,15,8,9,7,8,15,3,10,13,15,20,6,13,18,7,11)
+M <- c("Alligator",  "Anteater","Bear","Bird","Bull","Cat"," Chicken","Cow","Cub","Deer","Dog", "Duck","Eagle","Elephant", "Frog","Goat",   "Gorilla", "Hamster"," Hippo", "Horse","Kangaroo","Koala","Lion","Monkey","Mouse","Octopus","Ostrich","Penguin", "Pig","Rabbit","Rhino","Sheep","Squirrel","Tiger","Wolf")
+png(file = "barchart_Species.png")
+par(cex.axis=0.4) 
+barplot(H,names.arg=M,las=2,xlab="Species",ylab=, col="blue",
+main="barchart_Species",border="red")
+dev.off()
+
+#items
+
+library(readr)
+tools <- read_csv("R/Finalproject/tools.csv")
+print(tools)
+
+library(readr)
+accessories <- read_csv("R/Finalproject/accessories.csv")
+print(accessories)
+
+library(readr)
+bags <- read_csv("R/Finalproject/bags.csv")
+print(bags)
+
+library(readr)
+bottoms <- read_csv("R/Finalproject/bottoms.csv")
+print(bottoms)
+
+library(readr)
+dresses <- read_csv("R/Finalproject/dresses.csv")
+print(dresses)
+
+library(readr)
+headwear <- read_csv("R/Finalproject/headwear.csv")
+print(headwear)
+
+library(readr)
+shoes <- read_csv("R/Finalproject/shoes.csv")
+print(shoes)
+
+library(readr)
+socks <- read_csv("R/Finalproject/socks.csv")
+print(socks)
+
+library(readr)
+tops <- read_csv("R/Finalproject/tops.csv")
+print(tops)
+
+library(readr)
+umbrellas <- read_csv("R/Finalproject/umbrellas.csv")
+print(umbrellas)
+
+library(readr)
+housewares <- read_csv("R/Finalproject/housewares.csv")
+print(housewares)
+
+library(readr)
+floors <- read_csv("R/Finalproject/floors.csv")
+print(floors)
+
+library(readr)
+rugs <- read_csv("R/Finalproject/rugs.csv")
+print(rugs)
+
+library(readr)
+hangings <- read_csv("R/Finalproject/hangings.csv")
+show_col_types = FALSE
+print(hangings)
+
+library(readr)
+wallpaper <- read_csv("R/Finalproject/wallpaper.csv")
+print(wallpaper)
+
+library(readr)
+miscellaneous <- read_csv("R/Finalproject/miscellaneous.csv")
+print(miscellaneous)
+
+library(readr)
+music <- read_csv("R/Finalproject/music.csv")
+print(music)
+
+library(readr)
+other <- read_csv("R/Finalproject/other.csv")
+print(other)
+
+library(readr)
+photos <- read_csv("R/Finalproject/photos.csv")
+print(photos)
+
+library(readr)
+posters <- read_csv("R/Finalproject/posters.csv")
+print(posters)
+
+library(readr)
+fossils <- read_csv("R/Finalproject/fossils.csv")
+print(fossils)
+
+show_col_types = FALSE
+library(dplyr)
+items<- bind_rows(tools,accessories, bags, bottoms, dresses,headwear, shoes, socks, tops, umbrellas,housewares, floors, rugs, hangings, wallpaper,miscellaneous, music, other, fossils )
+print(items)
+nrow(items)
+ncol(items)
+items.lm <- lm(Buy~ Sell, data=items)
+plot(items)
+
+
+write.csv(items,file="items.csv", row.names = FALSE)
+items.summary<- summary(items)
+write.csv(items.summary,file="items.summary.csv", row.names = FALSE)
+plot(items)
+
+subset(items)[, c ("Sell")]->items.sellprice
+summary(items.sellprice)
+boxplot(items.sellprice)
+subset(items)[, c ("Name","Sell")]->items.sellprice
+library(dplyr)
+items.sellprice %>% slice_max(Sell, n = 20)
+print(items.sellprice)
+
+
+
+#creatures
+
+library(readr)
+fish<-read_csv("R/Finalproject/fish.csv")
+print(fish)
+
+library(readr)
+insects <- read_csv("R/Finalproject/insects.csv")
+print(insects)
+
+library(dplyr)
+creatures<-bind_rows(fish, insects)
+print(creatures)
+write.csv(creatures,file="creatures.csv", row.names = FALSE)
+nrow(creatures)
+ncol(creatures)
+
+subset(creatures)[, c ("Sell")]->creatures.sellprice
+summary(creatures.sellprice)
+boxplot(creatures.sellprice)
+
+subset(creatures)[, c ("Name", "Sell")]->creatures.sellprice
+library(dplyr)
+creatures.sellprice %>% slice_max(Sell, n = 20)
+
+library(readr)
+fish<-read_csv("R/Finalproject/fish.csv")
+print(fish)
+subset(fish)[, c ("Name","Where/How")]->fish.where
+print(fish.where)
+library(dplyr)
+filter(fish.where,  `Where/How` == "Sea")->fish.sea
+write.csv(fish.sea,file="fish.sea.csv", row.names = FALSE)
+nrow(fish.sea)
+filter(fish.where,  `Where/How` == "River")->fish.river
+write.csv(fish.river,file="fish.river.csv", row.names = FALSE)
+nrow(fish.river)
+filter(fish.where,  `Where/How` == "Pond")->fish.pond
+write.csv(fish.pond,file="fish.pond.csv", row.names = FALSE)
+nrow(fish.pond)
+
+subset(fish)[, c ("Name","Where/How","Sell")]->fish2
+print(fish2)
+filter(fish2,  `Where/How` == "Sea")->fish.sea
+write.csv(fish.sea,file="fish.sea.csv", row.names = FALSE)
+nrow(fish.sea)
+summary(fish.sea)
+filter(fish2,  `Where/How` == "River")->fish.river
+write.csv(fish.river,file="fish.river.csv", row.names = FALSE)
+nrow(fish.river)
+summary(fish.river)
+filter(fish2,  `Where/How` == "Pond")->fish.pond
+write.csv(fish.pond,file="fish.pond.csv", row.names = FALSE)
+nrow(fish.pond)
+summary(fish.pond)
+
+fish2.lm <- lm(Sell~`Where/How`,data=fish2)
+summary(fish2.lm)
+plot(fish2)
